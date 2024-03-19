@@ -1,0 +1,420 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My First API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/approval-stages": {
+            "post": {
+                "tags": [
+                    "Approval Stage"
+                ],
+                "summary": "Create Approvers Stage",
+                "operationId": "e250f33f93c390139e6e763feb9868a1",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "approver_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "approver_id": "example approver_id"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "approver_id": {
+                                            "type": "integer",
+                                            "example": "approver_id"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/approval-stages/{id}": {
+            "put": {
+                "tags": [
+                    "Approval Stage"
+                ],
+                "summary": "Update Approval Stage",
+                "operationId": "4a1755dd4e578a0da07c5056f1e62839",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "approver_id": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "approver_id": "example approver_id"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "approver_id": {
+                                            "type": "integer",
+                                            "example": "approver_id"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/approvers": {
+            "post": {
+                "tags": [
+                    "Approvers"
+                ],
+                "summary": "Create Approvers",
+                "operationId": "923f99d4badfcc65dfd15546b0a8af78",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "example name"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/expense": {
+            "post": {
+                "tags": [
+                    "Expense"
+                ],
+                "summary": "Create Expense",
+                "operationId": "4396f0b5d5a6eac4abc24a99fe697384",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "amount": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "amount": "example amount"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "amount": {
+                                            "type": "integer",
+                                            "example": "amount"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/expense/{id}": {
+            "get": {
+                "tags": [
+                    "Expense"
+                ],
+                "summary": "Get Expense Detail",
+                "operationId": "2e4429f218e5fd66e01fd04f38cad3a5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "title"
+                                        },
+                                        "content": {
+                                            "type": "string",
+                                            "example": "content"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/expense/{id}/approve": {
+            "patch": {
+                "tags": [
+                    "Expense"
+                ],
+                "summary": "Update Expense",
+                "operationId": "19af77a07b99544c173f04dd98fb8562",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "approver_id": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "approver_id": "example approver_id"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "approver_id": {
+                                            "type": "integer",
+                                            "example": "approver_id"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
